@@ -20,20 +20,24 @@ implementation of generalized end-to-end loss for speaker verification
 - For TD-SI, I used random selected utterances from each speaker. Blank of raw audio files are trimmed and then slicing is performed.  
 
 ### Files
-> configuration.py
-argument parsing  
+configuration.py  
+> argument parsing  
 
-> data_preprocess.py
+> data_preprocess.py  
+
 extract noise and perform STFT for raw audio. For each raw audio, voice activity detection is performed by using librosa library.
 
-> utils.py  
+> utils.py   
+
 containing various functions for training and test.  
 
 > model.py
+
 containing train and test function. Train fucntion draws graph, starts training and saves the model and history. Test function load 
 variables and test performance with test dataset.  
 
 > main.py
+
 When this file is implemented, training or test begins.
 
 
@@ -44,15 +48,18 @@ I trained the model with my notebook cpu. Model hyperpameters are followed by th
 For each utterance, random noise is added each forward step. I test the model after 60000 iteration. Equal Error Rate(EER) is 0. For small population, the model perform well. 
 <img src=Results/TDSV_loss.JPG width="300">
 
-Similarity matrix and EER, FAR, FRR
+Below figure contains Similarity matrix and EER, FAR, FRR.
 Each matrix means each speaker. If we call the first matrix as A (5x4), A[i,j] means the first speaker's ith vertification utterance cos similarity with jth speaker enrollment.
-<img src=Results/TDSV_결과.JPG width="500">
+
+<img src=Results/TDSV_결과.JPG width="400">
 
 
 2) TI-SV
 Random selected utterances are used. I test the model after 60000 iteration. Equal Error Rate(EER) is 0.09.  
+
 <img src=Results/TISV_loss.JPG width="300">
-<img src=Results/TISV_결과.JPG width="500">
+
+<img src=Results/TISV_결과.JPG width="400">
 
 
 
