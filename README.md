@@ -22,29 +22,37 @@ implementation of generalized end-to-end loss for speaker verification
 ### Files
 > configuration.py
 argument parsing  
+
 > data_preprocess.py
 extract noise and perform STFT for raw audio. For each raw audio, voice activity detection is performed by using librosa library.
+
 > utils.py  
 containing various functions for training and test.  
+
 > model.py
-- containing train and test function. Train fucntion draws graph, starts training and saves the model and history. Test function load variables and test performance with test dataset.  
+containing train and test function. Train fucntion draws graph, starts training and saves the model and history. Test function load 
+variables and test performance with test dataset.  
+
 > main.py
-- When this file is implemented, training or test begins.
+When this file is implemented, training or test begins.
 
 
 ### Results
-I trained the model with my notebook cpu. Model hyperpameters are followed by the paper :3-lstm layers with 128 hidden nodes and 64 projection nodes (Total 210434 variables). To finish training and test in time, I use smaller batch (4 speakers x 5 utterances) than the paper. I used about 85% of dataset for training and else for test. Only softmax loss is used, but I made contrast loss code too. 
+I trained the model with my notebook cpu. Model hyperpameters are followed by the paper :3-lstm layers with 128 hidden nodes and 64 projection nodes (Total 210434 variables). To finish training and test in time, I use smaller batch (4 speakers x 5 utterances) than the paper. I used about 85% of dataset for training and else for test. Only softmax loss is used, but I made contrast loss code too. In my cpu, it takes less than 1s for 40 utterances embedding.
 
 1) TD-SV
 For each utterance, random noise is added each forward step. I test the model after 60000 iteration. Equal Error Rate(EER) is 0. For small population, the model perform well. 
-<img src=Results/TDSV_loss.JPG width="200">
-<img src=Results/TDSV_결과.JPG width="200">
+<img src=Results/TDSV_loss.JPG width="300">
+
+Similarity matrix and EER, FAR, FRR
+Each matrix means each speaker. If we call the first matrix as A (5x4), A[i,j] means the first speaker's ith vertification utterance cos similarity with jth speaker enrollment.
+<img src=Results/TDSV_결과.JPG width="500">
 
 
 2) TI-SV
 Random selected utterances are used. I test the model after 60000 iteration. Equal Error Rate(EER) is 0.09.  
-<img src=Results/TISV_loss.JPG width="200">
-<img src=Results/TISV_결과.JPG width="200">
+<img src=Results/TISV_loss.JPG width="300">
+<img src=Results/TISV_결과.JPG width="500">
 
 
 
