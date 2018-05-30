@@ -1,5 +1,5 @@
 # Speaker_Verification
-implementation of generalized end-to-end loss for speaker verification
+Implementation of generalized end-to-end loss for speaker verification
 
 ### Explanation
 - This code is the implementation of generalized end-to-end loss for speaker verification (https://arxiv.org/abs/1710.10467)
@@ -13,16 +13,16 @@ implementation of generalized end-to-end loss for speaker verification
 
 ### Files
 - configuration.py  
-argument parsing  
+Argument parsing  
 
 - data_preprocess.py  
-extract noise and perform STFT for raw audio. For each raw audio, voice activity detection is performed by using librosa library.
+Extract noise and perform STFT for raw audio. For each raw audio, voice activity detection is performed by using librosa library.
 
 - utils.py   
-containing various functions for training and test.  
+Containing various functions for training and test.  
 
 - model.py  
-containing train and test function. Train fucntion draws graph, starts training and saves the model and history. Test function load 
+Containing train and test function. Train fucntion draws graph, starts training and saves the model and history. Test function load 
 variables and test performance with test dataset.  
 
 - main.py  
