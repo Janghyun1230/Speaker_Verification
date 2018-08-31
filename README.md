@@ -1,5 +1,5 @@
 # Speaker_Verification
-Implementation of generalized end-to-end loss for speaker verification
+Tensorflow implementation of generalized end-to-end loss for speaker verification
 
 ### Explanation
 - This code is the implementation of generalized end-to-end loss for speaker verification (https://arxiv.org/abs/1710.10467)
