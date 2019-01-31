@@ -27,7 +27,11 @@ variables and test performance with test dataset.
 
 - main.py  
 When this file is implemented, training or test begins.
-
+```
+if dataset is prepared, 
+python main.py --train True --model_path "where_you_want_to_save"                 # training
+python main.py --train False --model_path "model_path used at training phase"     # test
+```
 
 ### Data
 - I cannot obtain proper speaker verifiaction dataset. (The authors of the paper used their own Google dataset.)
