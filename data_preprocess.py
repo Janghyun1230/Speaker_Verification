@@ -60,7 +60,10 @@ def save_spectrogram_tdsv():
 
     utterances_spec = []
     for folder in os.listdir(audio_path):
-        utter_path= os.path.join(audio_path, folder, os.listdir(os.path.join(audio_path, folder))[0])
+        spk_dir = os.path.join(audio_path, folder)
+        spk_utts = os.listdir(spk_dir)
+        spk_utts.sort()
+        utter_path= os.path.join(spk_dir, spk_utts[0])
         if os.path.splitext(os.path.basename(utter_path))[0][-3:] != '001':  # if the text utterance doesn't exist pass
             print(os.path.basename(utter_path)[:4], "001 file doesn't exist")
             continue
