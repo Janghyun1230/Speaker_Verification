@@ -116,7 +116,7 @@ def test(path):
         ckpt_list = ckpt.all_model_checkpoint_paths
         loaded = 0
         for model in ckpt_list:
-            if config.model_num == int(model[-1]):    # find ckpt file which matches configuration model number
+            if config.model_num == int(model.split('-')[-1]):    # find ckpt file which matches configuration model number
                 print("ckpt file is loaded !", model)
                 loaded = 1
                 saver.restore(sess, model)  # restore variables from selected ckpt file
