@@ -42,7 +42,7 @@ I trained the model with my notebook cpu. Model hyperpameters are followed by th
 To finish training and test in time, I used smaller batch (4 speakers x 5 utterances) than the paper. I used first 85% of the dataset as training set and used the remained for the test. In the below, I used softmax loss (contrastive loss is also implemented). In my environment, it takes less than 1s for calculating 40 utterances embedding.
 
 1) **TD-SV**  
-For each utterance, random noise is added at each forward step. I tested the model after 60000 iteration. As a result, Equal Error Rate (EER) is 0, and we can see for small population, the model performs well. 
+For each utterance, random noise is added at each forward step. I tested the model after 60000 iteration. As a result, Equal Error Rate (EER) is 0, and we can see the model performs well for a small population. 
 <img src=Results/TDSV_loss.JPG width="300">
 
 The figure below contains similarity matrix and EER, FAR, FRR.
