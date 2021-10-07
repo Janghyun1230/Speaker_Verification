@@ -14,11 +14,8 @@ Tensorflow implementation of generalized end-to-end loss for speaker verificatio
 ### Files
 - *configuration.py* : Argument parsing
 - *data_preprocess.py* : Extracts noise and performs STFT on raw audio. For each raw audio, the voice activity detection is performed via librosa library.
-
 - *utils.py* : Contains various util functions for training and test.  
-
 - *model.py* : Contains train and test functions.
-
 - *main.py* : After the dataset is prepared, run
 ```
 python main.py --train True --model_path where_you_want_to_save                 # training
